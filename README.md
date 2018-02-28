@@ -7,3 +7,4 @@ piece you will be presented with the options for movement.
 To move click on one of the options of movement you are presented with.
 
 ![GUI](https://github.com/The-tiny-asian/chess/blob/master/ChessGUI.png)
+![Diagram](https://github.com/The-tiny-asian/chess/blob/master/ChessClassDiagram.png)
