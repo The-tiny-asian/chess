@@ -6,4 +6,4 @@ desired chess piece. When you click on the chess
 piece you will be presented with the options for movement.
 To move click on one of the options of movement you are presented with.
 
-![GUI](https://github.com/The-tiny-asian/chess/blob/master/ChessGUI.png)!
+![GUI](https://github.com/The-tiny-asian/chess/blob/master/ChessGUI.png)
