@@ -1,9 +1,7 @@
 Open processing
-pic
 click on the java box in the top right hand corner
-pic
 click on add mode
-pic 
+https://github.com/The-tiny-asian/chess/blob/master/tester/PicturesforProcessingToPython/Downloading.png
 It will bring you to this screen under libraries
 pic
 click on the modes tab at the top of the screen
