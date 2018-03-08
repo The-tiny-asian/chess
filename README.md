@@ -7,3 +7,4 @@ You can then select one of these to finalize your move, or select a different pi
 
 ![GUI](https://github.com/The-tiny-asian/chess/blob/master/ChessGUI.png)
 ![Diagram](https://github.com/The-tiny-asian/chess/blob/master/ChessClassDiagram.png)
+[GANT chart](https://docs.google.com/spreadsheets/d/1WjiPxPRB9XxdMgmoj6aKLD_7BoBjqClho6jLnPDHRwM/edit?ts=5a9ef4ae#gid=186001220)
