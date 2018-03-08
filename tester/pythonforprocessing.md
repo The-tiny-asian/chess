@@ -1,6 +1,7 @@
 Open processing
 click on the java box in the top right hand corner
 click on add mode
+![GUI](https://github.com/The-tiny-asian/chess/blob/master/tester/PicturesforProcessingToPython/Downloading.png)
 https://github.com/The-tiny-asian/chess/blob/master/tester/PicturesforProcessingToPython/Downloading.png
 It will bring you to this screen under libraries
 pic
