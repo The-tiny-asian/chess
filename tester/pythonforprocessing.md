@@ -10,3 +10,4 @@ add the python mode for processing 3 by Jonathan Feinberg
 Install:
 ![DownloadingPython](https://github.com/The-tiny-asian/chess/blob/master/tester/PicturesforProcessingToPython/Downloading.png)
 Then click on the java box in top right hand corner and click the python option. 
+![DownloadingPython](https://github.com/The-tiny-asian/chess/blob/master/tester/PicturesforProcessingToPython/PythonOption.png)
