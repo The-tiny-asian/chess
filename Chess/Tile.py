@@ -80,7 +80,7 @@ def rookCheck(isWhite, gameState, x, y):
         rightX = x + tileX + 1
         if gameState[rightX][y].getPiece() == " ":
             gameState[rightX][y].select()
-        elif gameState[rightX][y].getTeam == isWhite:
+        elif gameState[rightX][y].getTeam() != isWhite:
             gameState[rightX][y].select()
             break
         else:
@@ -89,7 +89,7 @@ def rookCheck(isWhite, gameState, x, y):
         leftX = x - tileX - 1
         if gameState[leftX][y].getPiece() == " ":
             gameState[leftX][y].select()
-        elif gameState[leftX][y].getTeam == isWhite:
+        elif gameState[leftX][y].getTeam() != isWhite:
             gameState[leftX][y].select()
             break
         else:
@@ -99,7 +99,7 @@ def rookCheck(isWhite, gameState, x, y):
         downY = y + tileY + 1
         if gameState[x][downY].getPiece() == " ":
             gameState[x][downY].select()
-        elif gameState[x][downY].getTeam == isWhite:
+        elif gameState[x][downY].getTeam() != isWhite:
             gameState[x][downY].select()
             break
         else:
@@ -109,7 +109,7 @@ def rookCheck(isWhite, gameState, x, y):
             upY = y - tileY - 1
             if gameState[x][upY].getPiece() == " ":
                 gameState[x][upY].select()
-            elif gameState[x][upY].getTeam == isWhite:
+            elif gameState[x][upY].getTeam() != isWhite:
                 gameState[x][upY].select()
                 break
             else:
