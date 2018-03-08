@@ -1,3 +1,6 @@
+#Import the logic for displaying spaces
+import PieceLogic as pl
+
 #Tile class, contains an x, y, 
 class Tile:
     def __init__(self,x,y):
@@ -50,9 +53,9 @@ class Tile:
             #Then it will check what piece it is and act accordingly
             #I moved all these methods down to make it more readable
             if self.piece == "Rook":
-                rookCheck(self.isWhite, gameState, self.x, self.y)
+                pl.rookCheck(self.isWhite, gameState, self.x, self.y)
             elif self.piece == "Knight":
-                knightCheck(self.isWhite, gameState, self.x, self.y)
+                pl.knightCheck(self.isWhite, gameState, self.x, self.y)
             #elif self.piece == "Bishop":
                 
             #elif self.piece == "King":
