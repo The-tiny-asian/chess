@@ -65,3 +65,17 @@ def knightCheck(isWhite, gameState, x, y):
     if x-1 >= 0 and y - 2 >= 0:
         if gameState[x-1][y-2].getTeam() is not isWhite or (gameState[x-1][y-2].getPiece() is " "):
             gameState[x-1][x-2].select()
+            
+def pawnCheck(isWhite, gameState, x, y):
+    if not isWhite:
+        if gameState[x][y-1].getPiece() == " ":
+            gameState[x][y-1].select()
+    else:
+        if gameState[x][y+1].getPiece() == " ":
+            gameState[x][y+1].select()
+    if y==6:
+        if gameState[x][y-2].getPiece() == " ":
+            gameState[x][y-2].select()
+    if y==1:
+        if gameState[x][y+2].getPiece() == " ":
+            gameState[x][y+2].select()
