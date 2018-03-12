@@ -11,7 +11,7 @@ def rookCheck(piece, gameState):
             break
         else:
             break
-    for tileX in range(x-1):
+    for tileX in range(x):
         leftX = x - tileX - 1
         if gameState[leftX][y].piece == " ":
             gameState[leftX][y].select(piece)
@@ -31,7 +31,7 @@ def rookCheck(piece, gameState):
         else:
             break
     if y - 1 >= 0:
-        for tileY in range(y-1):
+        for tileY in range(y):
             upY = y - tileY - 1
             if gameState[x][upY].piece == " ":
                 gameState[x][upY].select(piece)
