@@ -28,7 +28,8 @@ class Tile:
     def deselect(self):
         self.selected = False
     
-    def select(self):
+    def select(self, incoming):
+        self.incoming = incoming
         self.selected = True
     
     #What to do when a piece is clicked
@@ -38,8 +39,11 @@ class Tile:
         #it will replace its own piece and 
         #remove the other piece
         if self.selected:
-            #TODO: add this stuff
-            return
+            self.newPiece(self.incoming.piece,self.incoming.isWhite)
+            gameState[self.incoming.x][self.incoming.y].newPiece(" ",True)
+            for x in range(8):
+                for y in range(8):
+                    gameState[x][y].deselect()
         
         #Otherwise, it will select specific tiles 
         #depending on what piece it is 
@@ -53,26 +57,13 @@ class Tile:
             #Then it will check what piece it is and act accordingly
             #I moved all these methods down to make it more readable
             if self.piece == "Rook":
-                pl.rookCheck(self.isWhite, gameState, self.x, self.y)
+                pl.rookCheck(self,gameState)
             elif self.piece == "Knight":
-                pl.knightCheck(self.isWhite, gameState, self.x, self.y)
+                pl.knightCheck(self,gameState)
+            elif self.piece == "Pawn":
+                pl.pawnCheck(self,gameState)
             #elif self.piece == "Bishop":
                 
             #elif self.piece == "King":
                 
             #elif self.piece == "Queen":
-                
-            #elif self.piece == "Pawn":
-    
-    #These methods are used to get variables from the tile
-    def getX(self):
-        return self.x
-    
-    def getY(self):
-        return self.y
-    
-    def getPiece(self):
-        return self.piece
-    
-    def getTeam(self):
-        return self.isWhite
