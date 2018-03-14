@@ -68,6 +68,7 @@ class Tile:
                 pl.pawnCheck(self,gameState)
             #elif self.piece == "Bishop":
                 
-            #elif self.piece == "King":
+            elif self.piece == "King":
+                pl.kingCheck(self,gameState)
                 
             #elif self.piece == "Queen":
