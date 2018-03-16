@@ -1,3 +1,4 @@
+#Raheem Nimnicht
 def rookCheck(piece, gameState):
     isWhite = piece.isWhite
     x = piece.x
@@ -41,6 +42,7 @@ def rookCheck(piece, gameState):
             else:
                 break
             
+#Raheem Nimnicht
 def knightCheck(piece, gameState):
     
     isWhite = piece.isWhite
@@ -72,6 +74,7 @@ def knightCheck(piece, gameState):
         if gameState[x-1][y-2].isWhite is not isWhite or (gameState[x-1][y-2].piece is " "):
             gameState[x-1][x-2].select(piece)
             
+#David Kang
 def pawnCheck(piece, gameState):
     
     isWhite = piece.isWhite
