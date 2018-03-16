@@ -1,5 +1,6 @@
 from Tile import Tile
 
+#Raheem Nimnicht
 def newGame():
     #Create an 8x8 grid of tiles
     #This is a multidimensional array
