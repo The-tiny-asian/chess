@@ -13,15 +13,20 @@ class Tile:
     def display(self):
         if self.selected:
             fill(128)
+            rect(self.x*100+50,self.y*100+50,100,100,10)
+        elif self.isWhite or self.piece == " ":
+            fill(255)
+            rect(self.x*100+50,self.y*100+50,100,100,10)
+            
+        else:
+            fill(0)
+            rect(self.x*100+50,self.y*100+50,100,100,10)
+        if self.isWhite:
+            fill(0)
+            text(self.piece,self.x*100+50,self.y*100+50)
         else:
             fill(255)
-        rect(self.x*100+50,self.y*100+50,100,100,10)
-        img = loadImage
-        if self.iswhite:
-        
-        img.resize(80,80)
-        imageMode(CENTER)
-        image(img,self.x*100+50,self.y*100+50)
+            text(self.piece,self.x*100+50,self.y*100+50)
         
     #Method to replace the tile's current piece with a new one
     def newPiece(self, newPiece, newTeam):
