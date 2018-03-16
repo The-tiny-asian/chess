@@ -78,11 +78,11 @@ def pawnCheck(piece, gameState):
     x = piece.x
     y = piece.y
     
-    if not isWhite:
+    if isWhite:
         if gameState[x][y-1].piece == " ":
             gameState[x][y-1].select(piece)
         if x - 1 >= 0 and y - 1 >= 0:
-            if gameState[x-1][y-1].piece != " " :
+            if gameState[x-1][y-1].piece != " " and gameState[x-1][y+1].isWhite != isWhite:
                 gameState[x-1][y-1].select(piece)
         if x + 1 < 8 and y - 1 >= 0:
             if gameState[x+1][y-1].piece != " " and gameState[x+1][y-1].isWhite != isWhite:
@@ -92,17 +92,17 @@ def pawnCheck(piece, gameState):
         if gameState[x][y+1].piece == " ":
             gameState[x][y+1].select(piece)
         if x - 1 >= 0 and y + 1 < 8:
-            if gameState[x-1][y+1].piece != " " :
+            if gameState[x-1][y+1].piece != " " and gameState[x-1][y+1].isWhite != isWhite:
                 gameState[x-1][y+1].select(piece)
         if x + 1 < 8 and y + 1 < 8:
             if gameState[x+1][y+1].piece != " " and gameState[x+1][y+1].isWhite != isWhite:
                 gameState[x+1][y+1].select(piece)
             
-    if y==6 and not isWhite:
+    if y==6 and isWhite:
         if gameState[x][y-2].piece == " " and gameState[x][y-1].piece == " ":
             gameState[x][y-2].select(piece)
     #Black
-    if y==1 and isWhite:
+    if y==1 and not isWhite:
         if gameState[x][y+2].piece == " " and gameState[x][y+1].piece == " ":
             gameState[x][y+2].select(piece)
 def kingCheck(piece, gameState): #MY CODE IS NOT FULLY WORKING YET, i am figuring out the code that checks if a tile near the king is part of the enemy team
