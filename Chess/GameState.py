@@ -16,32 +16,32 @@ def newGame():
             #Assign correct tiles their correct pieces and teams
             if (x==0) or (x==7) or (x==0) or (x==7):
                 if y==0:
-                    grid[x][y].newPiece("Rook",True)
-                elif y==7:
                     grid[x][y].newPiece("Rook",False)
+                elif y==7:
+                    grid[x][y].newPiece("Rook",True)
             elif (x ==1) or (x ==6) or (x ==1) or (x ==6):
                 if y==0:
-                    grid[x][y].newPiece("Knight",True)
-                elif y==7:
                     grid[x][y].newPiece("Knight",False)
+                elif y==7:
+                    grid[x][y].newPiece("Knight",True)
             elif (x ==2) or (x ==5) or (x ==2) or (x ==5):
                 if y==0:
-                    grid[x][y].newPiece("Bishop",True)
-                elif y==7:
                     grid[x][y].newPiece("Bishop",False)
+                elif y==7:
+                    grid[x][y].newPiece("Bishop",True)
             elif (x ==4 and y==0) or (x ==3 and y==7):
                 if y==0:
-                    grid[x][y].newPiece("King",True)
-                elif y==7:
                     grid[x][y].newPiece("King",False)
+                elif y==7:
+                    grid[x][y].newPiece("King",True)
             elif (x==3 and y==0) or (x ==4 and y==7):
                 if y==0:
-                    grid[x][y].newPiece("Queen",True)
-                elif y==7:
                     grid[x][y].newPiece("Queen",False)
+                elif y==7:
+                    grid[x][y].newPiece("Queen",True)
             if y==1:
-                grid[x][y].newPiece("Pawn",True)
-            if y==6:
                 grid[x][y].newPiece("Pawn",False)
+            if y==6:
+                grid[x][y].newPiece("Pawn",True)
     
     return grid
