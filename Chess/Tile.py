@@ -11,6 +11,7 @@ class Tile:
         self.isWhite = False
     #Display the tile
     def display(self):
+        # By Emmanuel Luna
         if self.selected:
             fill(128)
         else:
