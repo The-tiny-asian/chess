@@ -119,42 +119,42 @@ def kingCheck(piece, gameState): #MY CODE IS NOT FULLY WORKING YET, i am figurin
 # the if statement that look like this: **if y-1 > 7 and y-1 < 7:** it is to check and make sure things are not out of bounds  
 # the if statement that looks like this: **gameState[x][y-1].isWhite** is checking if a tile near
 # it is the other team, if it is, it gets highlighted
-    if not isWhite:
-        if  y-1 <= 0:
-            if gameState[x][y-1].piece == " " or gameState[x][y-1].isWhite:
-                gameState[x][y-1].select(piece)
-    else:
-        if y+1 > 7:
-            if gameState[x][y+1].piece == " " or not gameState[x][y+1].isWhite:
-                gameState[x][y+1].select(piece)
+#    if not isWhite:
+#        if  y-1 <= 0:
+#            if gameState[x][y-1].piece == " " or gameState[x][y-1].isWhite:
+#                gameState[x][y-1].select(piece)
+#    else:
+#        if y+1 > 7:
+#            if gameState[x][y+1].piece == " " or not gameState[x][y+1].isWhite:
+#                gameState[x][y+1].select(piece)
 # this statement is also checking which piece the team is on and if it is a black team the piece can move up(if their is space)
 # and if the team is white the piece can move down one.              
-    if not isWhite:
-        if y+1 < 7:
-            if gameState[x][y+1].piece == " " or gameState[x][y+1].isWhite:
-                gameState[x][y+1].select(piece)
-    else:
-        if y-1 <= 0:
-            if gameState[x][y-1].piece == " " or not gameState[x][y-1].isWhite:
-                gameState[x][y-1].select(piece)
+#    if not isWhite:
+#        if y+1 < 7:
+#            if gameState[x][y+1].piece == " " or gameState[x][y+1].isWhite:
+#                gameState[x][y+1].select(piece)
+#    else:
+#        if y-1 <= 0:
+#            if gameState[x][y-1].piece == " " or not gameState[x][y-1].isWhite:
+#                gameState[x][y-1].select(piece)
 #this statement is either for white or black pieces and it is the ability for the king to move right        
-    if not isWhite:
-        if x+1 < 7:
-            if gameState[x+1][y].piece == " " or gameState[x+1][y].isWhite:
-                gameState[x+1][y].select(piece)
-    else:
-        if x+1 < 7:
-            if gameState[x+1][y].piece == " " or not gameState[x+1][y].isWhite:
-                gameState[x+1][y].select(piece)
+#    if not isWhite:
+#        if x+1 < 7:
+#            if gameState[x+1][y].piece == " " or gameState[x+1][y].isWhite:
+#                gameState[x+1][y].select(piece)
+#    else:
+#        if x+1 < 7:
+#            if gameState[x+1][y].piece == " " or not gameState[x+1][y].isWhite:
+#                gameState[x+1][y].select(piece)
 #This statement is either for white or black pieces and it is the ability for the king to move left
-    if not isWhite:
-        if x-1 >= 0:
-            if gameState[x-1][y].piece == " " or gameState[x-1][y].isWhite:
-                gameState[x-1][y].select(piece)
-    else:
-        if x-1 >= 0:
-            if gameState[x-1][y].piece == " " or not gameState[x-1][y].isWhite:
-                gameState[x-1][y].select(piece)
+#    if not isWhite:
+#        if x-1 >= 0:
+#            if gameState[x-1][y].piece == " " or gameState[x-1][y].isWhite:
+#                gameState[x-1][y].select(piece)
+#    else:
+#        if x-1 >= 0:
+#            if gameState[x-1][y].piece == " " or not gameState[x-1][y].isWhite:
+#                gameState[x-1][y].select(piece)
         
 ##The Code Below is the basic oode that i am still trying to build on. 
     # while y+1 == 0-7 or y-1 == 0-7 or x+1 == 0-7 or x-1 == 0-7:
