@@ -42,6 +42,9 @@ class Tile:
                 img = loadImage("KingWhite.png")
         else:
              return
+        img.resize(80,80)
+        imageMode(CENTER)
+        image(img,self.x*100+50,self.y*100+50)
         
     #Method to replace the tile's current piece with a new one
     def newPiece(self, newPiece, newTeam):
