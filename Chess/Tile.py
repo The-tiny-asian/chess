@@ -10,8 +10,7 @@ class Tile:
         self.piece = " "
         self.isWhite = False
     #Display the tile
-    def display(self):
-        # By Emmanuel Luna
+        def display(self):
         if self.selected:
             fill(128)
         else:
@@ -19,21 +18,30 @@ class Tile:
         rect(self.x*100+50,self.y*100+50,100,100,10)
         if self.piece == "Pawn":
              img = loadImage("PawnBlack.png")
+             if self.isWhite:
+                img = loadImage("PawnWhite.png")
         elif self.piece == "Knight":
              img = loadImage("KnightBlack.png")
+             if self.isWhite:
+                img = loadImage("KnightWhite.png")
         elif self.piece == "Rook":
              img = loadImage("RookBlack.png")
+             if self.isWhite:
+                img = loadImage("RookWhite.png")
         elif self.piece == "Bishop":
              img = loadImage("BishopBlack.png")
+             if self.isWhite:
+                img = loadImage("BishopWhite.png")
         elif self.piece == "Queen":
              img = loadImage("QueenBlack.png")
+             if self.isWhite:
+                img = loadImage("QueenWhite.png")
         elif self.piece == "King":
              img = loadImage("KingBlack.png")
+             if self.isWhite:
+                img = loadImage("KingWhite.png")
         else:
              return
-        img.resize(80,80)
-        imageMode(CENTER)
-        image(img,self.x*100+50,self.y*100+50)
         
     #Method to replace the tile's current piece with a new one
     def newPiece(self, newPiece, newTeam):
