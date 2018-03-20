@@ -12,46 +12,46 @@ class Tile:
     #Display the tile
     #Emmanuel Luna
 def display(self):
-            if self.selected:
-                fill(128)
-            else:
-                fill(255)
-            rect(self.x*100+50,self.y*100+50,100,100,10)
-            if self.piece == "Pawn":
-                 if self.isWhite:
-                    img = loadImage("PawnWhite.png")
-                 else:
-                     img = loadImage("PawnBlack.png")
-            elif self.piece == "Knight":
-                 if self.isWhite:
-                    img = loadImage("KnightWhite.png")
-                 else:
-                     img = loadImage("KnightBlack.png")
-            elif self.piece == "Rook":
-                 if self.isWhite:
-                    img = loadImage("RookWhite.png")
-                 else:
-                     img = loadImage("RookBlack.png")
-            elif self.piece == "Bishop":
-                 if self.isWhite:
-                    img = loadImage("BishopWhite.png")
-                 else:
-                     img = loadImage("BishopBlack.png")
-            elif self.piece == "Queen":
-                 if self.isWhite:
-                    img = loadImage("QueenWhite.png")
-                 else:
-                     img = loadImage("QueenBlack.png")
-            elif self.piece == "King":
-                 if self.isWhite:
-                    img = loadImage("KingWhite.png")
-                 else:
-                     img = loadImage("KingBlack.png")
-            else:
-                 return
-            img.resize(80,80)
-            imageMode(CENTER)
-            image(img,self.x*100+50,self.y*100+50)
+        if self.selected:
+            fill(128)
+        else:
+            fill(255)
+        rect(self.x*100+50,self.y*100+50,100,100,10)
+        if self.piece == "Pawn":
+             if self.isWhite:
+                img = loadImage("PawnWhite.png")
+             else:
+                 img = loadImage("PawnBlack.png")
+        elif self.piece == "Knight":
+             if self.isWhite:
+                img = loadImage("KnightWhite.png")
+             else:
+                 img = loadImage("KnightBlack.png")
+        elif self.piece == "Rook":
+             if self.isWhite:
+                img = loadImage("RookWhite.png")
+             else:
+                 img = loadImage("RookBlack.png")
+        elif self.piece == "Bishop":
+             if self.isWhite:
+                img = loadImage("BishopWhite.png")
+             else:
+                 img = loadImage("BishopBlack.png")
+        elif self.piece == "Queen":
+             if self.isWhite:
+                img = loadImage("QueenWhite.png")
+             else:
+                 img = loadImage("QueenBlack.png")
+        elif self.piece == "King":
+             if self.isWhite:
+                img = loadImage("KingWhite.png")
+             else:
+                 img = loadImage("KingBlack.png")
+        else:
+             return
+        img.resize(80,80)
+        imageMode(CENTER)
+        image(img,self.x*100+50,self.y*100+50)
         
     #Method to replace the tile's current piece with a new one
     def newPiece(self, newPiece, newTeam):
