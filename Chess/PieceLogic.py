@@ -49,30 +49,30 @@ def knightCheck(piece, gameState):
     x = piece.x
     y = piece.y
     
-    if x+2 < 8 and y + 1 < 8:
+    if x+2 < 8 and y + 1 < 8: #Right 2, Down 1
         if gameState[x+2][y+1].isWhite is not isWhite or (gameState[x+2][y+1].piece is " "):
-            gameState[x+2][y+1].select(piece)
-    if x+2 < 8 and y - 1 >= 0:
+            gameState[x+2][y+1].select(tile)
+    if x+2 < 8 and y - 1 >= 0: #Right 2, Up 1
         if gameState[x+2][y-1].isWhite is not isWhite or (gameState[x+2][y-1].piece is " "):
-            gameState[x+2][y-1].select(piece)
-    if x-2 >= 0 and y + 1 < 8:
+            gameState[x+2][y-1].select(tile)
+    if x-2 >= 0 and y + 1 < 8: #Left 2, Down 1
         if gameState[x-2][y+1].isWhite is not isWhite or (gameState[x-2][y+1].piece is " "):
-            gameState[x-2][y+1].select(piece)
-    if x-2 >= 0 and y - 1 >= 0:
+            gameState[x-2][y+1].select(tile)
+    if x-2 >= 0 and y - 1 >= 0: #Left 2, Up 1
         if (gameState[x-2][y-1].isWhite != isWhite) or (gameState[x-2][y-1].piece == " "):
-            gameState[x-2][y-1].select(piece)
-    if x+1 < 8 and y + 2 < 8:
+            gameState[x-2][y-1].select(tile)
+    if x+1 < 8 and y + 2 < 8: #Right 1, Down 2
         if gameState[x+1][y+2].isWhite is not isWhite or (gameState[x+1][y+2].piece is " "):
-            gameState[x+1][y+2].select(piece)
-    if x+1 < 8 and y - 2 >= 0:
+            gameState[x+1][y+2].select(tile)
+    if x+1 < 8 and y - 2 >= 0: #Right 1, Up 2
         if gameState[x+1][y-2].isWhite is not isWhite or (gameState[x+1][y-2].piece is " "):
-            gameState[x+1][y-2].select(piece)
-    if x-1 >= 0 and y + 2 < 8:
+            gameState[x+1][y-2].select(tile)
+    if x-1 >= 0 and y + 2 < 8: #Left 1, Down 2
         if gameState[x-1][y+2].isWhite is not isWhite or (gameState[x-1][y+2].piece is " "):
-            gameState[x-1][y+2].select(piece)
-    if x-1 >= 0 and y - 2 >= 0:
+            gameState[x-1][y+2].select(tile)
+    if x-1 >= 0 and y - 2 >= 0: #Left 1, Up 2
         if gameState[x-1][y-2].isWhite is not isWhite or (gameState[x-1][y-2].piece is " "):
-            gameState[x-1][y-2].select(piece)
+            gameState[x-1][y-2].select(tile)
             
 #David Kang
 def pawnCheck(piece, gameState):
