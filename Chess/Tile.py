@@ -10,7 +10,8 @@ class Tile:
         self.piece = " "
         self.isWhite = False
     #Display the tile
-        def display(self):
+    #Emmanuel Luna
+def display(self):
             if self.selected:
                 fill(128)
             else:
