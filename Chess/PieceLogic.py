@@ -72,7 +72,7 @@ def knightCheck(piece, gameState):
             gameState[x-1][y+2].select(piece)
     if x-1 >= 0 and y - 2 >= 0:
         if gameState[x-1][y-2].isWhite is not isWhite or (gameState[x-1][y-2].piece is " "):
-            gameState[x-1][x-2].select(piece)
+            gameState[x-1][y-2].select(piece)
             
 #David Kang
 def pawnCheck(piece, gameState):
