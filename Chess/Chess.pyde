@@ -3,8 +3,6 @@ import GameState as gs
 from Tile import Tile
 #Create begining game board
 gameState = gs.newGame()
-#Temporarily remove piece to test pieces
-gameState[0][6].newPiece(" ",True)
 
 def setup():
     size(1000,800)
