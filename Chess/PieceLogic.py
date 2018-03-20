@@ -156,3 +156,35 @@ def kingCheck(piece, gameState): #MY CODE IS NOT FULLY WORKING YET, i am figurin
             if gameState[x-1][y].piece == " " or not gameState[x-1][y].isWhite:
                 gameState[x-1][y].select(piece)
         
+##The Code Below is the basic oode that i am still trying to build on. 
+    # while y+1 == 0-7 or y-1 == 0-7 or x+1 == 0-7 or x-1 == 0-7:
+    if isWhite:
+        gameState[x][y-1].select(piece)
+        gameState[x][y+1].select(piece)
+        gameState[x-1][y].select(piece)
+        gameState[x+1][y].select(piece)
+        gameState[x+1][y-1].select(piece)
+        gameState[x+1][y+1].select(piece)
+        gameState[x-1][y-1].select(piece)
+        gameState[x-1][y+1].select(piece)
+         # else:
+             gameState[x][y-1].select(piece)
+             # gameState[x][y+1].select(piece)
+            gameState[x-1][y].select(piece)
+        gameState[x+1][y].select(piece)
+            gameState[x+1][y-1].select(piece)
+            # gameState[x+1][y+1].select(piece)
+        gameState[x-1][y-1].select(piece)
+        # gameState[x-1][y+1].select(piece)
+    # if y - 1 < 0:
+    #      if gameState[x][y-1].piece == " ":
+    #             gameState[x][y-1].select(piece)
+    # if y + 1 < 7:
+    #     if gameState[x][y+1].piece == " ":
+    #             gameState[x][y+1].select(piece)
+    # if x - 1 < 0:
+    #     if gameState[x-1][y].piece == " ":
+    #             gameState[x-1][y].select(piece)
+    # if x + 1 > 0:
+    #     if gameState[x+1][y].piece == " ":
+    #             gameState[x+1][y].select(piece)
