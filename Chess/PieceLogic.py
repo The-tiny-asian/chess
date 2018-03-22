@@ -91,7 +91,7 @@ def pawnCheck(piece, gameState):
             if gameState[x+1][y-1].piece != " " and gameState[x+1][y-1].isWhite != isWhite:
                 gameState[x+1][y-1].select(piece)
     #white
-    else:
+    elif y+1 < 8:
         if gameState[x][y+1].piece == " ":
             gameState[x][y+1].select(piece)
         if x - 1 >= 0 and y + 1 < 8:
