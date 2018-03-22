@@ -122,36 +122,52 @@ def kingCheck(piece, gameState):
     # while y+1 == 0-7 or y-1 == 0-7 or x+1 == 0-7 or x-1 == 0-7:
     if isWhite:
         if not gameState[y][x].x  < 1:#outofbounds exeption up
-            gameState[x][y-1].select(piece)
+            if gameState[x][y-1].piece == " " or not gameState[x][y-1].isWhite:
+                gameState[x][y-1].select(piece)
         if not gameState[y][x].x  > 6:#outofbounds exeption down
-            gameState[x][y+1].select(piece)
-        if not gameState[y][x].y > 6:#outofbounds exeption right
-            gameState[x+1][y].select(piece)
+            if gameState[x][y+1].piece == " " or not gameState[x][y+1].isWhite:
+                gameState[x][y+1].select(piece)
+            if not gameState[y][x].y > 6:#outofbounds exeption right
+                if gameState[x+1][y].piece == " " or not gameState[x+1][y].isWhite:
+                    gameState[x+1][y].select(piece)
             if not gameState[y][x].x  > 6:#outofbounds exeption down
-                gameState[x+1][y+1].select(piece)
+                if gameState[x+1][y+1].piece == " " or not gameState[x+1][y+1].isWhite:
+                    gameState[x+1][y+1].select(piece)
             if not gameState[y][x].x  < 1:#outofbounds exeption up
-                gameState[x+1][y-1].select(piece)
+                if gameState[x+1][y-1].piece == " " or not gameState[x+1][y-1].isWhite:
+                    gameState[x+1][y-1].select(piece)
         if  not gameState[y][x].y < 1:#this line of code is making sure that their is not an outofbounds exeption for going left on the board.
-            gameState[x-1][y].select(piece)
+            if gameState[x-1][y].piece == " " or not gameState[x-1][y].isWhite:
+                gameState[x-1][y].select(piece)
             if not gameState[y][x].x  > 6:#outofbounds exeption down
-                gameState[x-1][y+1].select(piece)
+                if gameState[x-1][y+1].piece == " " or not gameState[x-1][y+1].isWhite:
+                    gameState[x-1][y+1].select(piece)
             if not gameState[y][x].x  < 1:#outofbounds exeption up
-                gameState[x-1][y-1].select(piece)
+                if gameState[x-1][y-1].piece == " " or not gameState[x-1][y-1].isWhite:
+                    gameState[x-1][y-1].select(piece)
     else:
         if not gameState[y][x].x  < 1:#outofbounds exeption up
-            gameState[x][y-1].select(piece)
+            if gameState[x][y-1].piece == " " or gameState[x][y-1].isWhite:
+                gameState[x][y-1].select(piece)
         if not gameState[y][x].x  > 6:#outofbounds exeption down
-            gameState[x][y+1].select(piece)
-        if not gameState[y][x].y > 6:#outofbounds exeption right
-            gameState[x+1][y].select(piece)
+            if gameState[x][y+1].piece == " " or gameState[x][y+1].isWhite:
+                gameState[x][y+1].select(piece)
+            if not gameState[y][x].y > 6:#outofbounds exeption right
+                if gameState[x+1][y].piece == " " or gameState[x+1][y].isWhite:
+                    gameState[x+1][y].select(piece)
             if not gameState[y][x].x  > 6:#outofbounds exeption down
-                gameState[x+1][y+1].select(piece)
+                if gameState[x+1][y+1].piece == " " or gameState[x+1][y+1].isWhite:
+                    gameState[x+1][y+1].select(piece)
             if not gameState[y][x].x  < 1:#outofbounds exeption up
-                gameState[x+1][y-1].select(piece)
+                if gameState[x+1][y-1].piece == " " or gameState[x+1][y-1].isWhite:
+                    gameState[x+1][y-1].select(piece)
         if  not gameState[y][x].y < 1:#this line of code is making sure that their is not an outofbounds exeption for going left on the board.
-            gameState[x-1][y].select(piece)
+            if gameState[x-1][y].piece == " " or gameState[x-1][y].isWhite:
+                gameState[x-1][y].select(piece)
             if not gameState[y][x].x  > 6:#outofbounds exeption down
-                gameState[x-1][y+1].select(piece)
+                if gameState[x-1][y+1].piece == " " or gameState[x-1][y+1].isWhite:
+                    gameState[x-1][y+1].select(piece)
             if not gameState[y][x].x  < 1:#outofbounds exeption up
-                gameState[x-1][y-1].select(piece)
+                if gameState[x-1][y-1].piece == " " or gameState[x-1][y-1].isWhite:
+                    gameState[x-1][y-1].select(piece)
             
