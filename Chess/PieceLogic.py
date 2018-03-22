@@ -43,11 +43,11 @@ def rookCheck(piece, gameState):
                 break
             
 #Raheem Nimnicht
-def knightCheck(piece, gameState):
+def knightCheck(tile, gameState):
     
-    isWhite = piece.isWhite
-    x = piece.x
-    y = piece.y
+    isWhite = tile.isWhite
+    x = tile.x
+    y = tile.y
     
     if x+2 < 8 and y + 1 < 8: #Right 2, Down 1
         if gameState[x+2][y+1].isWhite is not isWhite or (gameState[x+2][y+1].piece is " "):
