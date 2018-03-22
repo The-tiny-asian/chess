@@ -170,4 +170,188 @@ def kingCheck(piece, gameState):
             if not gameState[y][x].x  < 1:#outofbounds exeption up
                 if gameState[x-1][y-1].piece == " " or gameState[x-1][y-1].isWhite:
                     gameState[x-1][y-1].select(piece)
-            
+def bishopCheck(tile, gameState):
+    
+    isWhite = tile.isWhite
+    x = tile.x
+    y = tile.y
+    
+    tilesLeft = x
+    tilesUp = y
+    tilesRight = 7-x
+    tilesDown = 7-y
+    
+    #Down Right
+    if tilesDown < tilesRight:
+        maxTiles = tilesDown
+    else:
+        maxTiles = tilesRight
+    for i in range(maxTiles):
+        xSpace = x+i+1
+        ySpace = y+i+1
+        if gameState[xSpace][ySpace].piece == " ":
+            gameState[xSpace][ySpace].select(tile)
+        elif gameState[xSpace][ySpace].isWhite is not isWhite:
+            gameState[xSpace][ySpace].select(tile)
+            break
+        else:
+            break
+    
+    #Up Left
+    if tilesUp < tilesLeft:
+        maxTiles = tilesUp
+    else:
+        maxTiles = tilesLeft
+    print(maxTiles)
+    for i in range(maxTiles):
+        xSpace = x-i-1
+        ySpace = y-i-1
+        if gameState[xSpace][ySpace].piece == " ":
+            gameState[xSpace][ySpace].select(tile)
+        elif gameState[xSpace][ySpace].isWhite is not isWhite:
+            gameState[xSpace][ySpace].select(tile)
+            break
+        else:
+            break
+    #Down Left
+    if tilesDown < tilesLeft:
+        maxTiles = tilesDown
+    else:
+        maxTiles = tilesLeft
+    for i in range(maxTiles):
+        xSpace = x-i-1
+        ySpace = y+i+1
+        if gameState[xSpace][ySpace].piece == " ":
+            gameState[xSpace][ySpace].select(tile)
+        elif gameState[xSpace][ySpace].isWhite is not isWhite:
+            gameState[xSpace][ySpace].select(tile)
+            break
+        else:
+            break
+    #Up Right
+    if tilesUp < tilesRight:
+        maxTiles = tilesUp
+    else:
+        maxTiles = tilesRight
+    for i in range(maxTiles):
+        xSpace = x+i+1
+        ySpace = y-i-1
+        if gameState[xSpace][ySpace].piece == " ":
+            gameState[xSpace][ySpace].select(tile)
+        elif gameState[xSpace][ySpace].isWhite is not isWhite:
+            gameState[xSpace][ySpace].select(tile)
+            break
+        else:
+            break
+def queenCheck(tile, gameState):
+    
+    isWhite = tile.isWhite
+    x = tile.x
+    y = tile.y
+    
+    tilesLeft = x
+    tilesUp = y
+    tilesRight = 7-x
+    tilesDown = 7-y
+    
+    #Down Right
+    if tilesDown < tilesRight:
+        maxTiles = tilesDown
+    else:
+        maxTiles = tilesRight
+    for i in range(maxTiles):
+        xSpace = x+i+1
+        ySpace = y+i+1
+        if gameState[xSpace][ySpace].piece == " ":
+            gameState[xSpace][ySpace].select(tile)
+        elif gameState[xSpace][ySpace].isWhite is not isWhite:
+            gameState[xSpace][ySpace].select(tile)
+            break
+        else:
+            break
+    
+    #Up Left
+    if tilesUp < tilesLeft:
+        maxTiles = tilesUp
+    else:
+        maxTiles = tilesLeft
+    print(maxTiles)
+    for i in range(maxTiles):
+        xSpace = x-i-1
+        ySpace = y-i-1
+        if gameState[xSpace][ySpace].piece == " ":
+            gameState[xSpace][ySpace].select(tile)
+        elif gameState[xSpace][ySpace].isWhite is not isWhite:
+            gameState[xSpace][ySpace].select(tile)
+            break
+        else:
+            break
+    #Down Left
+    if tilesDown < tilesLeft:
+        maxTiles = tilesDown
+    else:
+        maxTiles = tilesLeft
+    for i in range(maxTiles):
+        xSpace = x-i-1
+        ySpace = y+i+1
+        if gameState[xSpace][ySpace].piece == " ":
+            gameState[xSpace][ySpace].select(tile)
+        elif gameState[xSpace][ySpace].isWhite is not isWhite:
+            gameState[xSpace][ySpace].select(tile)
+            break
+        else:
+            break
+    #Up Right
+    if tilesUp < tilesRight:
+        maxTiles = tilesUp
+    else:
+        maxTiles = tilesRight
+    for i in range(maxTiles):
+        xSpace = x+i+1
+        ySpace = y-i-1
+        if gameState[xSpace][ySpace].piece == " ":
+            gameState[xSpace][ySpace].select(tile)
+        elif gameState[xSpace][ySpace].isWhite is not isWhite:
+            gameState[xSpace][ySpace].select(tile)
+            break
+        else:
+            break
+        
+    for tileX in range(7-x):
+        rightX = x + tileX + 1
+        if gameState[rightX][y].piece == " ":
+            gameState[rightX][y].select(tile)
+        elif gameState[rightX][y].isWhite != isWhite:
+            gameState[rightX][y].select(tile)
+            break
+        else:
+            break
+    for tileX in range(x):
+        leftX = x - tileX - 1
+        if gameState[leftX][y].piece == " ":
+            gameState[leftX][y].select(tile)
+        elif gameState[leftX][y].isWhite != isWhite:
+            gameState[leftX][y].select(tile)
+            break
+        else:
+            break
+    
+    for tileY in range(7-y):
+        downY = y + tileY + 1
+        if gameState[x][downY].piece == " ":
+            gameState[x][downY].select(tile)
+        elif gameState[x][downY].isWhite != isWhite:
+            gameState[x][downY].select(tile)
+            break
+        else:
+            break
+    if y - 1 >= 0:
+        for tileY in range(y):
+            upY = y - tileY - 1
+            if gameState[x][upY].piece == " ":
+                gameState[x][upY].select(tile)
+            elif gameState[x][upY].isWhite != isWhite:
+                gameState[x][upY].select(tile)
+                break
+            else:
+                break           
