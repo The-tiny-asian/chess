@@ -19,34 +19,34 @@ class Tile:
         rect(self.x*100+50,self.y*100+50,100,100,10)
         if self.piece == "Pawn":
              if self.isWhite:
-                img = loadImage("PawnWhite.png")
+                img = loadImage("Icons/PawnWhite.png")
              else:
-                 img = loadImage("PawnBlack.png")
+                 img = loadImage("Icons/PawnBlack.png")
         elif self.piece == "Knight":
              if self.isWhite:
-                img = loadImage("KnightWhite.png")
+                img = loadImage("Icons/KnightWhite.png")
              else:
-                 img = loadImage("KnightBlack.png")
+                 img = loadImage("Icons/KnightBlack.png")
         elif self.piece == "Rook":
              if self.isWhite:
-                img = loadImage("RookWhite.png")
+                img = loadImage("Icons/RookWhite.png")
              else:
-                 img = loadImage("RookBlack.png")
+                 img = loadImage("Icons/RookBlack.png")
         elif self.piece == "Bishop":
              if self.isWhite:
-                img = loadImage("BishopWhite.png")
+                img = loadImage("Icons/BishopWhite.png")
              else:
-                 img = loadImage("BishopBlack.png")
+                 img = loadImage("Icons/BishopBlack.png")
         elif self.piece == "Queen":
              if self.isWhite:
-                img = loadImage("QueenWhite.png")
+                img = loadImage("Icons/QueenWhite.png")
              else:
-                 img = loadImage("QueenBlack.png")
+                 img = loadImage("Icons/QueenBlack.png")
         elif self.piece == "King":
              if self.isWhite:
-                img = loadImage("KingWhite.png")
+                img = loadImage("Icons/KingWhite.png")
              else:
-                 img = loadImage("KingBlack.png")
+                 img = loadImage("Icons/KingBlack.png")
         else:
              return
         img.resize(80,80)
