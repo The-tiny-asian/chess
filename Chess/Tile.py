@@ -101,4 +101,5 @@ class Tile:
             elif self.piece == "King":
                 pl.kingCheck(self,gameState)
             elif self.piece == "Queen":
-                pl.queenCheck(self,gameState)
+                pl.bishopCheck(self,gameState)
+                pl.rookCheck(self,gameState)
