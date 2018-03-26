@@ -13,9 +13,12 @@ def draw():
     #Use the global gameState variable
     global gameState
     #Display all items in gameState
+    grey = True
     for x in range(8):
+        grey = not grey
         for y in range(8):
-            gameState[x][y].display()
+            grey = not grey
+            gameState[x][y].display(grey)
 
 def mouseClicked():
     #Use the global gameState variable
