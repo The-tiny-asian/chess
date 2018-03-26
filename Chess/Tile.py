@@ -11,11 +11,13 @@ class Tile:
         self.isWhite = False
     #Display the tile
     #Emmanuel Luna
-    def display(self):
+    def display(self, grey):
         if self.selected:
-            fill(128)
-        else:
+            fill(104,164,240)
+        elif grey:
             fill(255)
+        else:
+            fill(225)
         rect(self.x*100+50,self.y*100+50,100,100,10)
         if self.piece == "Pawn":
              if self.isWhite:
