@@ -120,16 +120,21 @@ def kingCheck(piece, gameState):
 # the if statement that looks like this: **gameState[x][y-1].isWhite** is checking if a tile near
 # it is the other team, if it is, it gets highlighted
     # while y+1 == 0-7 or y-1 == 0-7 or x+1 == 0-7 or x-1 == 0-7:
+    # if not gameState[y][x].y > 6:#outofbounds exeption right 
+    #     gameState[x+1][y].select(piece)    
+    
     if isWhite:
         if not gameState[y][x].x  < 1:#outofbounds exeption up
             if gameState[x][y-1].piece == " " or not gameState[x][y-1].isWhite:
                 gameState[x][y-1].select(piece)
         if not gameState[y][x].x  > 6:#outofbounds exeption down
+        
             if gameState[x][y+1].piece == " " or not gameState[x][y+1].isWhite:
+        
                 gameState[x][y+1].select(piece)
-            if not gameState[y][x].y > 6:#outofbounds exeption right
-                if gameState[x+1][y].piece == " " or not gameState[x+1][y].isWhite:
-                    gameState[x+1][y].select(piece)
+        if not gameState[y][x].y > 6:#outofbounds exeption right
+            if gameState[x+1][y].piece == " " or not gameState[x+1][y].isWhite:
+                gameState[x+1][y].select(piece)
             if not gameState[y][x].x  > 6:#outofbounds exeption down
                 if gameState[x+1][y+1].piece == " " or not gameState[x+1][y+1].isWhite:
                     gameState[x+1][y+1].select(piece)
@@ -155,12 +160,12 @@ def kingCheck(piece, gameState):
             if not gameState[y][x].y > 6:#outofbounds exeption right
                 if gameState[x+1][y].piece == " " or gameState[x+1][y].isWhite:
                     gameState[x+1][y].select(piece)
-            if not gameState[y][x].x  > 6:#outofbounds exeption down
-                if gameState[x+1][y+1].piece == " " or gameState[x+1][y+1].isWhite:
-                    gameState[x+1][y+1].select(piece)
-            if not gameState[y][x].x  < 1:#outofbounds exeption up
-                if gameState[x+1][y-1].piece == " " or gameState[x+1][y-1].isWhite:
-                    gameState[x+1][y-1].select(piece)
+                if not gameState[y][x].x  > 6:#outofbounds exeption down
+                    if gameState[x+1][y+1].piece == " " or gameState[x+1][y+1].isWhite:
+                        gameState[x+1][y+1].select(piece)
+                if not gameState[y][x].x  < 1:#outofbounds exeption up
+                    if gameState[x+1][y-1].piece == " " or gameState[x+1][y-1].isWhite:
+                        gameState[x+1][y-1].select(piece)
         if  not gameState[y][x].y < 1:#this line of code is making sure that their is not an outofbounds exeption for going left on the board.
             if gameState[x-1][y].piece == " " or gameState[x-1][y].isWhite:
                 gameState[x-1][y].select(piece)
@@ -170,6 +175,7 @@ def kingCheck(piece, gameState):
             if not gameState[y][x].x  < 1:#outofbounds exeption up
                 if gameState[x-1][y-1].piece == " " or gameState[x-1][y-1].isWhite:
                     gameState[x-1][y-1].select(piece)
+            
 def bishopCheck(tile, gameState):
     
     isWhite = tile.isWhite
