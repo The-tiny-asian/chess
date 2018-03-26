@@ -108,6 +108,12 @@ def pawnCheck(piece, gameState):
     if y==1 and not isWhite:
         if gameState[x][y+2].piece == " " and gameState[x][y+1].piece == " ":
             gameState[x][y+2].select(piece)
+#the code below is to check weather you got a rook to the end of the board, this turns that rook into a king.--Bella and Raheem
+    if y==7 and not isWhite:
+        piece.newPiece("Queen",isWhite)
+    if y==0 and isWhite:
+        piece.newPiece("Queen",isWhite)
+        
 def kingCheck(piece, gameState):
     isWhite = piece.isWhite
     x = piece.x
