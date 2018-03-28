@@ -1,5 +1,5 @@
 #Import the logic for displaying spaces and gamestate for checks/checkmates
-#Raheem
+#Raheem and Emmanuel
 import PieceLogic as pl
 import GameState as gs
 
