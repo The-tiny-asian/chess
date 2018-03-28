@@ -123,7 +123,8 @@ def pawnCheck(tile, gameState):
     if y==1 and not isWhite:
         if gameState[x][y+2].piece == " " and gameState[x][y+1].piece == " ":
             tileList.append(gameState[x][y+2])
-#the code below is to check weather you got a rook to the end of the board, this turns that rook into a king.--Bella and Raheem
+#the code below is to check weather you got a rook to the end of the board, this turns that rook into a king.
+#--Bella and Raheem
     if y==7 and not isWhite:
         tile.newPiece("Queen",isWhite)
     if y==0 and isWhite:
@@ -132,7 +133,7 @@ def pawnCheck(tile, gameState):
     del tileList[0]
     return tileList
         
-def kingCheck(tile, gameState):
+def kingCheck(tile, gameState):#Bella
     isWhite = tile.isWhite
     x = tile.x
     y = tile.y
@@ -195,7 +196,7 @@ def kingCheck(tile, gameState):
     del tileList[0]
     return tileList
             
-def bishopCheck(tile, gameState):
+def bishopCheck(tile, gameState):#Raheem
     
     isWhite = tile.isWhite
     x = tile.x
