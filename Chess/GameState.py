@@ -91,7 +91,33 @@ def gameChecks(gameState):
         checkCheckmate(gameState,blackKing)
 
 def checkCheckmate(gameState,king):
-    return
+    isWhite = king.isWhite
+    x = king.x
+    y = king.y
+    global whiteCheckMate
+    global blackCheckMate
+    
+    nullTile = Tile(-1,-1)
+    allyPieces = [nullTile]
+    possibleMoves = [nullTile]
+    
+    for i in range(8):
+        for j in range(8):
+            if gameState[i][j].isWhite == isWhite:
+                tempList = gameState[i][j].testCheck(gameState)
+                try:
+                    for n in range(len(tempList)):
+                        allyPieces.append(gameState[i][j])
+                        possibleMoves.append(tempList[n])
+                except:
+                    print("Hello")
+    del allyPieces[0]
+    del possibleMoves[0]
+    for i in range(len(allyPieces)):
+        print(allyPieces[i].x, ",", allyPieces[i].y, "|", possibleMoves[i].x, ",", possibleMoves[i].y)
+        #testBoard = gameState
+        #testBoard[possibleMoves[i].x][possibleMoves[i].y].newPiece(allyPieces[i].piece,allyPieces[i].isWhite)
+        #testBoard[allyPieces[i].x][allyPieces[i].y].newPiece(" ", False)
 
 def interfaceUpdate():
     global blackCheck
@@ -103,3 +129,9 @@ def interfaceUpdate():
     if whiteCheck:
         fill(255)
         text("WHITE IS \n UNDER CHECK",900,425)
+    if blackCheckMate:
+        fill(0)
+        text("BLACK IS \n UNDER CHECKMATE",900,300)
+    if whiteCheckMate:
+        fill(255)
+        text("WHITE IS \n UNDER CHECKMATE",900,500)
