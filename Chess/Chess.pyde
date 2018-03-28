@@ -10,6 +10,8 @@ def setup():
     rectMode(CENTER)
 
 def draw():
+    background(150)
+    gs.interfaceUpdate()
     #Use the global gameState variable
     global gameState
     #Display all items in gameState
