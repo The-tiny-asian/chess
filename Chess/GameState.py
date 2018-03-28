@@ -1,5 +1,10 @@
 from Tile import Tile
 
+whiteCheck = False
+blackCheck = False
+whiteCheckMate = False
+blackCheckMate = False
+
 #Raheem Nimnicht
 def newGame():
     #Create an 8x8 grid of tiles
@@ -46,3 +51,55 @@ def newGame():
                 grid[x][y].newPiece("Pawn",True)
     
     return grid
+
+def gameChecks(gameState):
+    global whiteCheck
+    global blackCheck
+    whiteSuccess = False
+    blackSuccess = False
+    for i in range(8):
+        for j in range(8):
+            #Find King piece
+            if gameState[i][j].piece == "King":
+                if gameState[i][j].isWhite:
+                    whiteKing = gameState[i][j]
+                else:
+                    blackKing = gameState[i][j]
+                for i_ in range(8):
+                    for j_ in range(8):
+                        #Find each non-blank piece of the opposite team
+                        if gameState[i][j].isWhite != gameState[i_][j_].isWhite and gameState[i_][j_].piece != " ":
+                            #Get a list of each piece that piece can select
+                            tileList = gameState[i_][j_].testCheck(gameState)
+                            for n in range(len(tileList)):
+                                if tileList[n].x == i and tileList[n].y == j:
+                                    if gameState[i][j].isWhite:
+                                        whiteCheck = True
+                                        whiteSuccess = True
+                                    else:
+                                        blackCheck = True
+                                        blackSuccess = True
+                                    break
+    
+    if not whiteSuccess:
+        whiteCheck = False
+    else:
+        checkCheckmate(gameState,whiteKing)
+    if not blackSuccess:
+        blackCheck = False
+    else:
+        checkCheckmate(gameState,blackKing)
+
+def checkCheckmate(gameState,king):
+    return
+
+def interfaceUpdate():
+    global blackCheck
+    global whiteCheck
+    
+    if blackCheck:
+        fill(0)
+        text("BLACK IS \n UNDER CHECK",900,375)
+    if whiteCheck:
+        fill(255)
+        text("WHITE IS \n UNDER CHECK",900,425)
