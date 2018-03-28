@@ -1,5 +1,6 @@
-#Import the logic for displaying spaces
+#Import the logic for displaying spaces and gamestate for checks/checkmates
 import PieceLogic as pl
+import GameState as gs
 
 #Tile class, contains an x, y, 
 class Tile:
@@ -80,6 +81,7 @@ class Tile:
             for x in range(8):
                 for y in range(8):
                     gameState[x][y].deselect()
+            gs.gameChecks(gameState)
         
         #Otherwise, it will select specific tiles 
         #depending on what piece it is 
@@ -93,15 +95,42 @@ class Tile:
             #Then it will check what piece it is and act accordingly
             #I moved all these methods down to make it more readable
             if self.piece == "Rook":
-                pl.rookCheck(self,gameState)
+                tileList = pl.rookCheck(self,gameState)
             elif self.piece == "Knight":
-                pl.knightCheck(self,gameState)
+                tileList = pl.knightCheck(self,gameState)
             elif self.piece == "Pawn":
-                pl.pawnCheck(self,gameState)
+                tileList = pl.pawnCheck(self,gameState)
             elif self.piece == "Bishop":
-                pl.bishopCheck(self,gameState)    
+                tileList = pl.bishopCheck(self,gameState)
             elif self.piece == "King":
-                pl.kingCheck(self,gameState)
+                tileList = pl.kingCheck(self,gameState)
             elif self.piece == "Queen":
-                pl.bishopCheck(self,gameState)
-                pl.rookCheck(self,gameState)
+                tileList = pl.bishopCheck(self,gameState)
+                secondTileList = pl.rookCheck(self,gameState)
+                for i in range(len(secondTileList)):
+                    tileList.append(secondTileList[i])
+            try:
+                for i in range(len(tileList)):
+                    tileList[i].select(self)
+            except:
+                return
+    def testCheck(self,gameState):
+        if self.piece == "Rook":
+            tileList = pl.rookCheck(self,gameState)
+        elif self.piece == "Knight":
+            tileList = pl.knightCheck(self,gameState)
+        elif self.piece == "Pawn":
+            tileList = pl.pawnCheck(self,gameState)
+        elif self.piece == "Bishop":
+            tileList = pl.bishopCheck(self,gameState)  
+        elif self.piece == "King":
+            tileList = pl.kingCheck(self,gameState)
+        elif self.piece == "Queen":
+            tileList = pl.bishopCheck(self,gameState)
+            secondTileList = pl.rookCheck(self,gameState)
+            for i in range(len(secondTileList)):
+                tileList.append(secondTileList[i])
+        try:
+            return tileList
+        except:
+            return
