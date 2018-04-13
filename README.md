@@ -5,7 +5,7 @@ The controls will be very simple. When you click on a chess
 piece you will be presented with the options for movement.
 You can then select one of these to finalize your move, or select a different piece to view its options.
 
-![GUI](https://github.com/The-tiny-asian/chess/blob/master/ChessGUI.png)
+![GUI](https://github.com/The-tiny-asian/chess/blob/master/ChessRunning.png)
 ![Diagram](https://github.com/The-tiny-asian/chess/blob/master/ChessClassDiagram.png)
 
 
